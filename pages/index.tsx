@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ReactCardFlip from 'react-card-flip';
+import ReactCardFlip from "react-card-flip";
+import allCardStyles from "./cardStyles";
 const front: string[] = ["🤖", "👽", "👻", "🤡", "🐧", "🦚", "😄", "🚀"];
 const back: string[] = [
   "robot",
@@ -12,39 +13,50 @@ const back: string[] = [
   "rocket",
 ];
 const Home: React.FC = () => {
-  const [flippedCards, setFlippedCards] = useState<number[]>([]);
+  const [isClicked, setIsClicked] = useState(false); // State to keep track of button click
 
-  const handleCardClick = (index: number) => {
-    if (!flippedCards.includes(index)) {
-      setFlippedCards([...flippedCards, index]);
-    } else {
-      setFlippedCards(flippedCards.filter((cardIndex) => cardIndex !== index));
-    }
+  const handleButtonClick = () => {
+    setIsClicked(true); // Update state to indicate button is clicked
   };
+  const [currentCard, setCurrentCard] = useState(0);
+  const handleNext = () => {
+    setCurrentCard((prevCard) => (prevCard + 1) % front.length); // Increment current card index
+  };
+  const handlePrevious = () => {
+    setCurrentCard(currentCard - 1);
+  };
+
   return (
-    <div>
-    <div className="gameBoard">
-      {front.map((item: string, index: number) => (
-        <div   className="card"   key={index}>
-        <ReactCardFlip
-          isFlipped={flippedCards.includes(index)}
-          flipDirection="horizontal"
+      <ReactCardFlip
+        isFlipped={isClicked}
+        flipDirection="horizontal"
+        cardStyles={allCardStyles}
+        containerStyle={{margin:'auto'}}
+      >
+        <div
+          className="front"
+        
         >
+          {front[currentCard]}
           <div
-            className="front"
+            className="buttons"
+            style={{
+              flexBasis: "100%",
+              display: "flex",
+              justifyContent: "space-around",
+            }}
           >
-            {item}
-            <div className="buttons">
-          <button      onClick={() => handleCardClick(index)}>Ignore</button>
-          <button      onClick={() => handleCardClick(index)}>Response</button>
+            <button onClick={handleButtonClick}>Ignore</button>
+            <button onClick={handleButtonClick}>Response</button>
           </div>
-          </div>
-          <div className="back" onClick={() => handleCardClick(index)}></div>
-        </ReactCardFlip>
         </div>
-      ))}
-    </div>
-  </div>
+        <div
+          className="back"
+          onClick={handleButtonClick}
+          
+        ></div>
+      </ReactCardFlip>
+ 
   );
 };
 
