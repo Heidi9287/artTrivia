@@ -58,8 +58,8 @@ const Home: React.FC = () => {
         >
           {back[currentCard]}
           <div className="buttons" style={allCardStyles.buttonStyle}>
-          <button onClick={handleNext}>Next Card</button>
-      <button onClick={handlePrevious}>Last Card</button>
+    <button onClick={handleNext}>Next Card</button>
+     {    currentCard>0 && <button onClick={handlePrevious}>Last Card</button>}
       <button   onClick={handleBackClick}>See the question again</button>
       </div>
         </div>
