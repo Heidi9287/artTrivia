@@ -5,6 +5,7 @@ type FlexboxStyles = {
   backgroundColor: string;
   justifyContent: string;
   alignItems: string;
+  color:string;
   flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
 };
 
@@ -16,6 +17,7 @@ const front: FlexboxStyles = {
   justifyContent: "center",
   alignItems: "center",
   flexWrap: "wrap",
+  color:'navy'
 };
 const buttonStyle={display:'flex',flexBasis:'100%',justifyContent:'space-evenly'}
 const back: FlexboxStyles={  width:"400px",
@@ -25,6 +27,7 @@ display:"flex",
   justifyContent:'center',
   alignItems:'center',
   flexWrap: "wrap",
+  color:'navy',
 }
   const allCardStyles = { front,back,buttonStyle};
   export default allCardStyles;
