@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize";
+const Sequelize = require("sequelize");
 const config = {
   logging: false,
 };
@@ -8,4 +8,4 @@ const URL = `postgres://localhost/${DB_NAME}`;
 
 const db = new Sequelize(process.env.DATABASE_URL || URL, config);
 
-export default db;
+module.exports = db;
