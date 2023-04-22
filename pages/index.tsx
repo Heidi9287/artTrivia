@@ -73,23 +73,27 @@ const Home: React.FC = () => {
  {front[currentCard]}
           <div className="buttons" style={allCardStyles.buttonStyle}>
             <button onClick={handleButtonClick} value="IGNORE">
-              Ignore
+            IGNORE
             </button>
             <button onClick={handleButtonClick} value="RESPOND">
-              Response
+            RESPOND
+            </button>
+            <button onClick={handleButtonClick} value="IT DEPENDS">
+            IT DEPENDS
             </button>
           </div>
         </div>
         <div className="back" style={allCardStyles.back}>
           {back[currentCard]}
           <div className="buttons" style={allCardStyles.buttonStyle}>
+          {currentCard > 0 && (
+              <button onClick={handlePrevious}>Last Card</button>
+            )}
             {currentCard < back.length - 1 && (
               <button onClick={handleNext}>Next Card</button>
             )}
-            {currentCard > 0 && (
-              <button onClick={handlePrevious}>Last Card</button>
-            )}
-            <button onClick={handleBackClick}>See the question again</button>
+           
+            <button onClick={handleBackClick}>Answer Again</button>
           </div>
         </div>
       </ReactCardFlip>
