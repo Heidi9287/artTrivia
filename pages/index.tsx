@@ -12,6 +12,10 @@ import {
   handlePrevious,
 } from "./helperFunc";
 const Home: React.FC = () => {
+  type Card = {
+    question: string;
+    answer: string;
+  };
   const [isClicked, setIsClicked] = useState(false); // State to keep track of button click
   const [data, setData] = useState<Card[]>([]);
   const [currentCard, setCurrentCard] = useState(0);
@@ -43,13 +47,13 @@ const Home: React.FC = () => {
         <div className="front" style={allCardStyles.front}>
           {front[currentCard]}
           <div className="buttons" style={allCardStyles.buttonStyle}>
-            <button onClick={checkAnswer} value="IGNORE">
+            <button onClick={(event) => checkAnswer(event, back, currentCard, score, setScore, setIsClicked)} value="IGNORE">
               IGNORE
             </button>
-            <button onClick={checkAnswer} value="RESPOND">
+            <button onClick={(event) => checkAnswer(event, back, currentCard, score, setScore, setIsClicked)}  value="RESPOND">
               RESPOND
             </button>
-            <button onClick={checkAnswer} value="IT DEPENDS">
+            <button onClick={(event) => checkAnswer(event, back, currentCard, score, setScore, setIsClicked)}  value="IT DEPENDS">
               IT DEPENDS
             </button>
           </div>
@@ -58,13 +62,13 @@ const Home: React.FC = () => {
           {back[currentCard]}
           <div className="buttons" style={allCardStyles.buttonStyle}>
             {currentCard > 0 && (
-              <button onClick={handlePrevious}>Last Card</button>
+              <button onClick={(event)=>handlePrevious(setIsClicked,setCurrentCard,currentCard)}>Last Card</button>
             )}
             {currentCard < back.length - 1 && (
-              <button onClick={handleNext}>Next Card</button>
+              <button onClick={(event)=>handleNext(setIsClicked,setCurrentCard,currentCard)}>Next Card</button>
             )}
 
-            <button onClick={handleBackClick}>Answer Again</button>
+            <button onClick={(event)=>handleBackClick(setIsClicked)}>Answer Again</button>
           </div>
         </div>
       </ReactCardFlip>
