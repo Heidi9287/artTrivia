@@ -5,7 +5,9 @@ type Card = {
   answer: string;
   id: number;
 };
+
 type back = { id: number; answer: string };
+
 export const getCards = async (): Promise<Card[]> => {
   const res = await fetch('./api/card');
   const json = await res.json();
@@ -34,7 +36,7 @@ export const checkAnswer = (
   setIsClicked: React.Dispatch<React.SetStateAction<boolean>>,
   setScore: React.Dispatch<React.SetStateAction<number>>,
   setCorrectIds: React.Dispatch<React.SetStateAction<number[]>>,
-  setWrongIds: React.Dispatch<React.SetStateAction<number[]>>,
+  setWrongIds: React.Dispatch<React.SetStateAction<number[]>>
 ) => {
   let answer = (event.target as HTMLButtonElement).value;
   if (
@@ -44,9 +46,13 @@ export const checkAnswer = (
     setScore(score + 1);
     setCorrectIds([...correctIds, back[currentCard].id]);
   }
-  if (back[currentCard].answer != answer && score > 0&& !wrongIds.includes(back[currentCard].id)) {
+  if (
+    back[currentCard].answer !== answer &&
+    score > 0 &&
+    !wrongIds.includes(back[currentCard].id)
+  ) {
     setScore(score - 1);
-    setWrongIds([...wrongIds, back[currentCard].id])
+    setWrongIds([...wrongIds, back[currentCard].id]);
   }
   setIsClicked(true); // Update state to indicate button is clicked
 };
@@ -76,5 +82,13 @@ export const handlePrevious = (
   setIsClicked(false);
   setTimeout(() => {
     setCurrentCard(currentCard - 1);
-  }, 100);
+  }, 100); 
 };
+
+const HelperFunc = () => {
+  // This component doesn't have any JSX, but it's required for Next.js
+  return null;
+};
+
+export default HelperFunc;
+

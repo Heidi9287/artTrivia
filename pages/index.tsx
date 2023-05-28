@@ -34,15 +34,19 @@ const Home: React.FC = () => {
   const front = getFronts(data);
   const back: { id: number; answer: string }[] = getBacks(data);
   const containerStyle = {
-    margin: '5% auto',
-    width: '400px',
+    margin: '0 auto',
+    width: '40vw',
+    borderRadius:"20px"
   };
   return (
     <>
-      <div>
-        <h1 className="title">IGNORE OR REPOND?</h1>
+      <div className='titleContainer'>
+       
+        <h2 className='secondTitle'>PAGED AT 3 AM</h2>
+        <h1 className="title">RESPOND OR IGNORE?</h1>
+        <h2 className="score">Score: {score}</h2>
       </div>
-      <div className="score">Score: {score}</div>
+    
 
       <ReactCardFlip
         isFlipped={isClicked}
