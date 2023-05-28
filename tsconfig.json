@@ -29,7 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     "server/db.js",
-    "server/card.js",
+    "server/gameCard.js",
     "server/seed.js"
   ],
   "exclude": [
