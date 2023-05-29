@@ -2,8 +2,7 @@
 body {
   height: 100vh;
   width: 100vw;
-  background-color: #04313e;
-  color: white;
+  background-color: rgb(68, 102, 111);
   font-family: 'Orbitron', sans-serif;
 }
 .result {
@@ -11,7 +10,7 @@ body {
   left: 40%;
   width: 400px;
   height: 150px;
-  background-color: #5f9ea091;
+  background-color: #81bfc191;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -24,29 +23,44 @@ body {
   grid-template-areas:
     'title2 title2'
     'title score';
-width: 70vw;
+  width: 70vw;
   margin: 5% auto;
 }
 .title {
   margin: 0;
   font-size: 80px;
-  color: #bcd864;
+  color: #e6950a;
   font-weight: 300;
   width: 70%;
   grid-area: title;
 }
-.secondTitle {
-  grid-area: title2;
-  font-weight: 200;
-  width: 30%;
-  margin: 0;
-  font-size: 30px;
-  color: #bcd864;
-}
 .score {
   grid-area: score;
   align-self: flex-end;
-  color:#ef559f;
+  color: #6bdfec;
   font-size: 25px;
   text-align: right;
+}
+.triviaContentContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.question {
+  width: 80%;
+  font-size: 30px;
+  margin: auto;
+  font-family: helvetica;
+  color: rgb(68, 102, 111);
+}
+.buttonStyle {
+  width: 80px;
+  height: 40px;
+  border: none;
+  background-color: rgb(68, 102, 111);
+  color: #f9dfb3;
+}
+.buttonStyle:hover {
+  background-color: #e6950a;
+  color: rgb(68, 102, 111);
+  cursor: pointer;
 }

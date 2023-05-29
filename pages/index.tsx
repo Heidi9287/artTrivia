@@ -2,9 +2,11 @@ import Card from '@component/server/card';
 import React, { useState, useEffect } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import { allCardStyles } from '../styles/cardStyles';
+import Image from 'next/image';
 import {
   getCards,
   getFronts,
+  getImage,
   getBacks,
   checkAnswer,
   handleBackClick,
@@ -16,6 +18,7 @@ const Home: React.FC = () => {
     question: string;
     answer: string;
     id: number;
+    image:string;
   };
 
   const [isClicked, setIsClicked] = useState(false); // State to keep track of button click
@@ -32,29 +35,23 @@ const Home: React.FC = () => {
     fetchData();
   }, []);
   const front = getFronts(data);
+  const image=getImage(data)
   const back: { id: number; answer: string }[] = getBacks(data);
-  const containerStyle = {
-    margin: '0 auto',
-    width: '40vw',
-    borderRadius:"20px"
-  };
   return (
     <>
       <div className='titleContainer'>
        
-        <h2 className='secondTitle'>PAGED AT 3 AM</h2>
-        <h1 className="title">RESPOND OR IGNORE?</h1>
+        <h2 className='title'>Art Trivia</h2>
         <h2 className="score">Score: {score}</h2>
       </div>
-    
-
+    <div className='triviaContentContainer'>
       <ReactCardFlip
         isFlipped={isClicked}
         flipDirection="horizontal"
-        containerStyle={containerStyle}
+
       >
         <div className="front" style={allCardStyles.front}>
-          {front[currentCard]}
+          <p className='question'>   {front[currentCard]}</p>
           <div className="buttons" style={allCardStyles.buttonStyle}>
             <button
               onClick={(event) =>
@@ -71,9 +68,10 @@ const Home: React.FC = () => {
                   setWrongIds
                 )
               }
-              value="IGNORE"
+              value="Yes"
+              className='buttonStyle'
             >
-              IGNORE
+              YES
             </button>
             <button
               onClick={(event) =>
@@ -90,34 +88,17 @@ const Home: React.FC = () => {
                   setWrongIds
                 )
               }
-              value="RESPOND"
+              value="No"
+              className='buttonStyle'
             >
-              RESPOND
+              NO
             </button>
-            <button
-              onClick={(event) =>
-                checkAnswer(
-                  event,
-                  back,
-                  currentCard,
-                  correctIds,
-                  score,
-                  wrongIds,
-                  setIsClicked,
-                  setScore,
-                  setCorrectIds,
-                  setWrongIds
-                )
-              }
-              value="IT DEPENDS"
-            >
-              IT DEPENDS
-            </button>
+        
           </div>
         </div>
         <div className="back" style={allCardStyles.back}>
           {back.length === 0 && <div>Loading...</div>}
-          {back.length > 0 && <div>{back[currentCard].answer} </div>}
+          {back.length > 0 && <p>{back[currentCard].answer} </p>}
           <div className="buttons" style={allCardStyles.buttonStyle}>
             {currentCard > 0 && (
               <button
@@ -144,6 +125,13 @@ const Home: React.FC = () => {
           </div>
         </div>
       </ReactCardFlip>
+  <Image 
+  src={image[currentCard]}
+  alt="Mona Lisa"
+  width={300}
+  height={400}
+  />
+</div>
       {isClicked && currentCard === back.length - 1 && (
         <>
           <div className="result">

@@ -3,6 +3,7 @@ import React from 'react';
 type Card = {
   question: string;
   answer: string;
+  image:string;
   id: number;
 };
 
@@ -16,6 +17,11 @@ export const getCards = async (): Promise<Card[]> => {
 
 export const getFronts = (cards: Card[]): string[] => {
   return cards.map((card) => card.question);
+};
+export const getImage = (cards: Card[]): string[] => {
+  return cards.map((card) => 
+  card.image
+  );
 };
 
 export const getBacks = (cards: Card[]) => {

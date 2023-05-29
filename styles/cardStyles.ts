@@ -6,43 +6,41 @@ type FlexboxStyles = {
   backgroundColor: string;
   justifyContent: string;
   alignItems: string;
-  color:string;
   flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
   flexBasis:string;
 };
 
 export const front: FlexboxStyles = {
-  borderRadius:"40px",
-  width:"100%",
+  borderRadius:"20px",
+  width:"300px",
   height: "400px",
   display: "flex",
-  backgroundColor: "lightblue",
-  justifyContent: "center",
+  backgroundColor: "#f9dfb3",
+  justifyContent: "",
   alignItems: "center",
   flexWrap: "wrap",
-  color: 'navy',
-  flexBasis: ""
+  flexBasis: "",
+
 };
 export const buttonStyle: FlexboxStyles={
-  borderRadius:"40px",
+  borderRadius:"30px",
   display: 'flex', flexBasis: '100%', justifyContent: 'space-evenly',
   width: "",
   height: "",
   backgroundColor: "",
   alignItems: "",
-  color: ""
 }
 export const back: FlexboxStyles={
-  borderRadius:"40px",
-  width: "400px",
+  borderRadius:"20px",
+  width:"300px",
   height: "400px",
   backgroundColor: "beige",
   display: "flex",
   justifyContent: 'center',
   alignItems: 'center',
   flexWrap: "wrap",
-  color: 'navy',
-  flexBasis: ""
+  flexBasis: "",
+
 }
 
 export const allCardStyles = { front,back,buttonStyle};

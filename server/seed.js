@@ -6,6 +6,7 @@ let AllCards = [
     question:
       "Is Leonardo da Vinci's 'Mona Lisa' displayed in the Louvre Museum?",
     answer: 'Yes',
+    image:'/monaLisa.svg'
   },
   {
     question:
