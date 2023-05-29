@@ -98,13 +98,14 @@ const Home: React.FC = () => {
         </div>
         <div className="back" style={allCardStyles.back}>
           {back.length === 0 && <div>Loading...</div>}
-          {back.length > 0 && <p>{back[currentCard].answer} </p>}
+          {back.length > 0 && <p className='answer'>{back[currentCard].answer} </p>}
           <div className="buttons" style={allCardStyles.buttonStyle}>
             {currentCard > 0 && (
               <button
                 onClick={(event) =>
                   handlePrevious(setIsClicked, setCurrentCard, currentCard)
                 }
+                className='buttonStyle'
               >
                 Last Card
               </button>
@@ -114,12 +115,14 @@ const Home: React.FC = () => {
                 onClick={(event) =>
                   handleNext(setIsClicked, setCurrentCard, currentCard)
                 }
+                className='buttonStyle'
               >
                 Next Card
               </button>
             )}
 
-            <button onClick={(event) => handleBackClick(setIsClicked)}>
+            <button onClick={(event) => handleBackClick(setIsClicked)
+            }  className='buttonStyle'>
               Answer Again
             </button>
           </div>

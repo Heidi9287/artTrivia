@@ -6,46 +6,53 @@ let AllCards = [
     question:
       "Is Leonardo da Vinci's 'Mona Lisa' displayed in the Louvre Museum?",
     answer: 'Yes',
-    image:'/monaLisa.svg'
+    image: '/monaLisa.svg',
   },
   {
     question:
       'Did Vincent van Gogh only sell one painting during his lifetime?',
     answer: 'Yes',
+    image: '/vanGogh.svg',
   },
   {
     question:
       "Is the painting 'Starry Night' by Vincent van Gogh housed in the Metropolitan Museum of Art?",
     answer: 'No',
+    image: '/starryNight.svg',
   },
   {
     question:
       'Is the De Stijl movement primarily associated with organic shapes, curvilinear forms, and intricate ornamentation?',
     answer: 'No',
+    image: '/deStijl.svg',
   },
   {
     question:
       'Is the Memphis Group known for its postmodern furniture and product designs?',
     answer: 'Yes',
+    image: '/memphis.svg',
   },
   {
     question: 'Did Claude Monet primarily paint urban landscapes?',
     answer: 'No',
+    image: '/monet.svg',
   },
   {
     question: `Did Henri Matisse co-found the Fauvism movement?`,
     answer: 'Yes',
+    image: '/matisse.svg',
   },
   {
     question:
       'Did classical art primarily originate from Central European civilizations and Northern European mythology',
     answer: 'No',
+    image: '/classicalArt.svg',
   },
-  { question: 'Did Henry Matisse co-found the Cubist movement?', answer: 'No' },
   {
     question:
       'Did Leonardo da Vinci paint the ceiling of the Sistine Chapel in Vatican City?',
     answer: 'No',
+    image: '/sistineChapel.svg',
   },
   {
     question:
@@ -113,10 +120,15 @@ let AllCards = [
     answer: 'No',
   },
   {
-    question: 'Did Wassily Kandinsky primarily believe that abstract art could only evoke rational and logical responses rather than emotional and spiritual ones?',
+    question:
+      'Did Wassily Kandinsky primarily believe that abstract art could only evoke rational and logical responses rather than emotional and spiritual ones?',
     answer: 'No',
   },
-  { question: 'Did Banksy start his artistic career as a traditional oil painter? ', answer: 'No' },
+  {
+    question:
+      'Did Banksy start his artistic career as a traditional oil painter? ',
+    answer: 'No',
+  },
   {
     question: 'Did Ai Weiwei ever worked in architecture',
     answer: 'Yes',
@@ -128,13 +140,16 @@ let AllCards = [
   },
   { question: 'Is "The Last Supper" a famous mural painting?', answer: 'Yes' },
   {
-    question: 'Is the Eames Lounge Chair a well-known example of mid-century modern furniture design?',
+    question:
+      'Is the Eames Lounge Chair a well-known example of mid-century modern furniture design?',
     answer: 'Yes',
   },
-  { question: 'Did Frank Lloyd Wright focus on designing skyscrapers?', answer: 'No' },
   {
-    question:
-      'Is Pablo Picasso a womanizer?',
+    question: 'Did Frank Lloyd Wright focus on designing skyscrapers?',
+    answer: 'No',
+  },
+  {
+    question: 'Is Pablo Picasso a womanizer?',
     answer: 'Yes',
   },
 ];

@@ -34,7 +34,7 @@ export const back: FlexboxStyles={
   borderRadius:"20px",
   width:"300px",
   height: "400px",
-  backgroundColor: "beige",
+  backgroundColor: "rgb(176 215 219)",
   display: "flex",
   justifyContent: 'center',
   alignItems: 'center',
