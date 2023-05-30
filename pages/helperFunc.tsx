@@ -3,6 +3,7 @@ import React from 'react';
 type Card = {
   question: string;
   answer: string;
+  detailAnswer:string;
   image:string;
   id: number;
 };
@@ -23,7 +24,11 @@ export const getImage = (cards: Card[]): string[] => {
   card.image
   );
 };
-
+export const getDetailAnswer = (cards: Card[]): string[] => {
+  return cards.map((card) => 
+  card.detailAnswer
+  );
+};
 export const getBacks = (cards: Card[]) => {
   const backData = cards.map((card) => ({
     id: card.id,

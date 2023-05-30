@@ -1,6 +1,6 @@
-const Sequelize = require("sequelize");
-const db = require("./db");
-const Card = db.define("card", {
+const Sequelize = require('sequelize');
+const db = require('./db');
+const Card = db.define('card', {
   id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
@@ -14,9 +14,13 @@ const Card = db.define("card", {
     type: Sequelize.STRING,
     allowNull: false,
   },
-image:{
-  type:Sequelize.STRING,
-}
+  detailAnswer: {
+    type: Sequelize.TEXT,
+    allowNull: true,
+  },
+  image: {
+    type: Sequelize.STRING,
+  },
 });
 
 module.exports = Card;
