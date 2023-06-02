@@ -143,8 +143,7 @@ const Home: React.FC = () => {
         <>
           <div className="result">
             Your score is {score}
-            <button>X</button>
-            <button>play again</button>
+            <button onClick={()=>{setCurrentCard(0);setIsClicked(false);setScore(0);setCorrectIds([]);setWrongIds([])}} className="buttonStyle">play again</button>
           </div>
         </>
       )}
