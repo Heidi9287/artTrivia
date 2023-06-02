@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir":"dist",
     "target": "es5",
     "module": "esnext",
     "lib": [
@@ -22,17 +23,19 @@
       ]
     },
     "noEmit": false,
-    "incremental": true
+    "incremental": true,
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "server/db.js",
-    "server/gameCard.js",
+    "server/card.js",
     "server/seed.js"
   ],
   "exclude": [
-    "node_modules"
-  ]
+    "node_modules",
+    "dist"
+  ],
+
 }
