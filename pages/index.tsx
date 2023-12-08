@@ -147,6 +147,18 @@ const Home: React.FC = () => {
           </div>
         </>
       )}
+      <div className='rules'>
+<h2 className='rulesTitle'> Rules</h2>
+<p>
+  correct answer = score + 1<br></br>
+  wrong answer = score - 1<br></br>
+  min score = 0<br></br>
+  For fun and education!
+</p>
+
+
+
+      </div>
     </>
   );
 };
