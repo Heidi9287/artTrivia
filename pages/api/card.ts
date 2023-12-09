@@ -5,11 +5,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  console.log("hit there")
   const client = new Client({
     database: 'forsal',
     port: 5432 // default PostgreSQL port number
   });
-
+console.log("hit here")
   try {
     await client.connect();
     console.log('Connected to database');
