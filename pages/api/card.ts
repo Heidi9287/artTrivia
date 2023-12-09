@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Client } from 'pg';
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -11,7 +10,7 @@ export default async function handler(
     port: 5432 // default PostgreSQL port number
   });
 
-  try {
+  try {  console.log('API route is called');
     await client.connect();
     console.log('Connected to database');
 
@@ -22,7 +21,7 @@ export default async function handler(
     res.json({
       data: fetchedData
     });
-  } catch (error) {
+  } catch (error) { console.error('Error in API route:', error);
     res.status(500).json({
       error: 'Internal server error is this the reason'
     });
