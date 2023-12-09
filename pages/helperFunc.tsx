@@ -11,7 +11,7 @@ type Card = {
 type back = { id: number; answer: string };
 
 export const getCards = async (): Promise<Card[]> => {
-  const res = await fetch('./api/card');
+  const res = await fetch('/api/card');
   const json = await res.json();
   return json.data;
 };
