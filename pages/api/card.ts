@@ -24,7 +24,7 @@ export default async function handler(
   } catch (error) {
     console.error('Error connecting to database', error);
     res.status(500).json({
-      error: 'Internal server error'
+      error: 'Internal server error is this the reason'
     });
   } finally {
     await client.end();
