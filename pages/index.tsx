@@ -31,9 +31,15 @@ const Home: React.FC = () => {
   const [score, setScore] = useState(0);
   useEffect(() => {
     const fetchData = async () => {
-      const cards = await getCards();
-      setData(cards);
+      try {
+        const cards = await getCards();
+        console.log(cards); // Log the data to the console
+        setData(cards);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     };
+  
     fetchData();
   }, []);
   const front = getFronts(data);
