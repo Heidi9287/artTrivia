@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     const fetchData = async () => {
       try {
         const cards = await getCards();
-        console.log(cards); // Log the data to the console
+        console.log("these are cards" + cards); // Log the data to the console
         setData(cards);
       } catch (error) {
         console.error('Error fetching data:', error);

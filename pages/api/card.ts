@@ -5,12 +5,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("hit there")
+
   const client = new Client({
     database: 'forsal',
     port: 5432 // default PostgreSQL port number
   });
-console.log("hit here")
+
   try {
     await client.connect();
     console.log('Connected to database');
@@ -23,9 +23,6 @@ console.log("hit here")
       data: fetchedData
     });
   } catch (error) {
-    console.error('Error connecting to database', error);
-    console.log('Environment Variables:', process.env);
-console.log('Database Connection Details:');
     res.status(500).json({
       error: 'Internal server error is this the reason'
     });
