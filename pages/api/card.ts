@@ -7,7 +7,7 @@ export default async function handler(
 
   const client = new Client({
     database: 'forsal',
-    port: 5432 // default PostgreSQL port number
+    port: process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : undefined,
   });
 
   try {  console.log('API route is called');
