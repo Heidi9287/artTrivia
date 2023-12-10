@@ -6,8 +6,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const client = new Client({
-    database: 'forsal',
+    database: 'dlg6hri8pkgt7',
     port: 5432,
+    password:"317ef7ff9b6910763fc1117b0b4ea51b3631077ac0dd38c86ac63a28f652ad28",
+    user:"ndgyvstbhoyhnj"
+
   });
 
   try {
